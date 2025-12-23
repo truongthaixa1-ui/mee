@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants, easeOut } from "framer-motion";
 import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
-import { Variants } from "framer-motion";
-
+// --- Animation Variants ---
 const staggerContainer: Variants = {
   hidden: {},
   visible: {
@@ -17,7 +15,6 @@ const staggerContainer: Variants = {
   },
 };
 
-// Animation Variants
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -25,12 +22,12 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], // ✅ hợp lệ
+      ease: easeOut, // ✅ TS hợp lệ
     },
   },
 };
 
-
+// --- Main Component ---
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden selection:bg-blue-500 selection:text-white">
@@ -54,8 +51,8 @@ export default function Home() {
       {/* --- HERO SECTION --- */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
-        
-        <motion.div 
+
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
