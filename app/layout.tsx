@@ -2,10 +2,9 @@
 
 import { motion, Variants, easeOut } from "framer-motion";
 import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
-// Stagger container animation
+// Stagger container
 const staggerContainer: Variants = {
   hidden: {},
   visible: {
@@ -24,12 +23,12 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: easeOut, // ✅ dùng easing hợp lệ
+      ease: easeOut, // ✅ hợp lệ TypeScript
     },
   },
 };
 
-export default function HomeLayout() {
+export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden selection:bg-blue-500 selection:text-white">
       {/* --- HEADER --- */}
@@ -52,8 +51,8 @@ export default function HomeLayout() {
       {/* --- HERO SECTION --- */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
-        
-        <motion.div 
+
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
