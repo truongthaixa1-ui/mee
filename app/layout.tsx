@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Variants } from "framer-motion";
 
 const staggerContainer: Variants = {
@@ -18,8 +17,6 @@ const staggerContainer: Variants = {
 };
 
 // Animation Variants
-import { Variants } from "framer-motion";
-
 const fadeInUp: Variants = {
   hidden: {
     opacity: 0,
