@@ -6,20 +6,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Animation Variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
+import { Variants } from "framer-motion";
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
+const fadeInUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
   visible: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], // thay cho "easeOut"
+    },
+  },
 };
+
 
 export default function Home() {
   return (
