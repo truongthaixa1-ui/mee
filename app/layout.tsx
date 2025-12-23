@@ -5,6 +5,18 @@ import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lu
 import Image from "next/image";
 import Link from "next/link";
 
+import { Variants } from "framer-motion";
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 // Animation Variants
 import { Variants } from "framer-motion";
 
