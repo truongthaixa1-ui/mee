@@ -27,7 +27,7 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], // ✅ KHÔNG PHẢI STRING
+      ease: [0.16, 1, 0.3, 1], // ✅ sử dụng cubic bezier array
     },
   },
 };
