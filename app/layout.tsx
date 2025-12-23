@@ -18,8 +18,6 @@ const staggerContainer: Variants = {
 };
 
 // Animation Variants
-import { easeOut } from "framer-motion";
-
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -27,7 +25,7 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: easeOut, // ✅ hợp lệ
+      ease: [0.16, 1, 0.3, 1], // ✅ hợp lệ
     },
   },
 };
