@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { Variants } from "framer-motion";
 
 const staggerContainer: Variants = {
@@ -17,17 +18,16 @@ const staggerContainer: Variants = {
 };
 
 // Animation Variants
+import { easeOut } from "framer-motion";
+
 const fadeInUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], // ✅ sử dụng cubic bezier array
+      ease: easeOut, // ✅ hợp lệ
     },
   },
 };
