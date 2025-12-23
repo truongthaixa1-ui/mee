@@ -2,9 +2,10 @@
 
 import { motion, Variants, easeOut } from "framer-motion";
 import { ArrowRight, Code, Globe, BarChart3, ShieldCheck, Zap, Layers } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-// --- Animation Variants ---
+// Stagger container animation
 const staggerContainer: Variants = {
   hidden: {},
   visible: {
@@ -15,6 +16,7 @@ const staggerContainer: Variants = {
   },
 };
 
+// Fade in up animation
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -22,13 +24,12 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: easeOut, // ✅ TS hợp lệ
+      ease: easeOut, // ✅ dùng easing hợp lệ
     },
   },
 };
 
-// --- Main Component ---
-export default function Home() {
+export default function HomeLayout() {
   return (
     <main className="min-h-screen overflow-hidden selection:bg-blue-500 selection:text-white">
       {/* --- HEADER --- */}
@@ -51,8 +52,8 @@ export default function Home() {
       {/* --- HERO SECTION --- */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
-
-        <motion.div
+        
+        <motion.div 
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -61,15 +62,18 @@ export default function Home() {
           <motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium">
             🚀 Giải pháp Digital toàn diện 2024
           </motion.div>
+
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
             Nâng tầm thương hiệu <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300">
               Kỷ nguyên số
             </span>
           </motion.h1>
+
           <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             Blue Solutions Digital cung cấp các giải pháp thiết kế website, marketing và chuyển đổi số giúp doanh nghiệp của bạn bứt phá doanh thu.
           </motion.p>
+
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-blue-600/20 group">
               Tư vấn miễn phí
